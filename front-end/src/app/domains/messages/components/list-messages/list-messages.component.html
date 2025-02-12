@@ -1,1 +1,6 @@
-<p>list-messages works!</p>
+@let messages = messages$ | async;
+
+@for (item of messages; track item.id) {
+  <dtbc-display-one-message [message]="item" />
+}
+

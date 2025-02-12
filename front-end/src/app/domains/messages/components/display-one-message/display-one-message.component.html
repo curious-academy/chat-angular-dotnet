@@ -1,0 +1,10 @@
+@let content = message();
+
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>{{ content.author.surname }}</mat-panel-title>
+    <mat-panel-description>
+      {{content.content}}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+</mat-expansion-panel>
