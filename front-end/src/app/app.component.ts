@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ListMessagesComponent } from "./domains/messages/components/list-messages/list-messages.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [ListMessagesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
