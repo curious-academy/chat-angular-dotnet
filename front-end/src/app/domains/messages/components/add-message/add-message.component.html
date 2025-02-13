@@ -1,0 +1,5 @@
+<mat-form-field class="example-full-width">
+  <mat-label>Ton message</mat-label>
+  <input type="text" matInput placeholder="Ex. Miaou" [(ngModel)]="message().content">
+</mat-form-field>
+<button mat-raised-button (click)="send()">Envoyer</button>

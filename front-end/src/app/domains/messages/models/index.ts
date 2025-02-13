@@ -10,4 +10,12 @@ export interface Message {
   content: string
 }
 
+export type NewMessage = Omit<Message, 'id'>
+
+export const defaultMessage: NewMessage = {
+  author: {id: 0, surname: ''},
+  content: '',
+  date: new Date()
+}
+
 export type Messages = Message[]
