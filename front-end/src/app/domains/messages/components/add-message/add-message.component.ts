@@ -5,6 +5,7 @@ import { defaultMessage, NewMessage } from '../../models';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MessageInfra } from '../../services/messages.infra';
+import { ConnectionMessages } from '../../services/messages.application';
 
 @Component({
   selector: 'dtbc-add-message',
@@ -18,17 +19,14 @@ export class AddMessageComponent implements OnInit {
 
   ngOnInit(): void {
     this.infra.connect()
-
-    // this.connection.on('messageReceived', (author, message) => {
-    //   console.info('message reçu ', { message, author })
-    // })
+    this.infra.receive().subscribe({
+      next: message => {
+        console.info('message reçu : ', message)
+      }
+    })
   }
 
   send(): void {
-    // console.info(this.message().content)
-    // this.connection.send('newMessage', 'evan', this.message().content)
-    //               .then(() => this.message().content = '');
-
     this.infra.sendOne({
       author: { id: 0, surname: 'author'},
       content: this.message().content,
