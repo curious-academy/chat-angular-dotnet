@@ -5,7 +5,7 @@ export interface ReceiveMessages {
 }
 
 export interface ConnectionMessages {
-
+  connect(): void
 }
 
 /**

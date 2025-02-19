@@ -17,9 +17,7 @@ export class AddMessageComponent implements OnInit {
   message = signal(defaultMessage)
 
   ngOnInit(): void {
-    // this.connection.start()
-    //                .then(() => console.info('HUB IS CONNECTED'))
-    //                .catch((err) => console.error(err));
+    this.infra.connect()
 
     // this.connection.on('messageReceived', (author, message) => {
     //   console.info('message reçu ', { message, author })
